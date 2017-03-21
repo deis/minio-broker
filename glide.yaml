@@ -1,0 +1,11 @@
+package: github.com/deis/minio-broker
+import:
+- package: code.cloudfoundry.org/lager
+- package: github.com/kubernetes-incubator/service-catalog
+  version: ~0.0.1-RC1
+  subpackages:
+  - contrib/pkg/broker/controller
+  - contrib/pkg/broker/server
+  - pkg/brokerapi
+- package: github.com/minio/minio-go
+  version: ~2.0.4

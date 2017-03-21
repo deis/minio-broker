@@ -1,0 +1,14 @@
+apiVersion: servicecatalog.k8s.io/v1alpha1
+kind: Broker
+metadata:
+  name: {{ default "minio" .Values.app.broker_name | quote }}
+  labels:
+    heritage: {{.Release.Service | quote }}
+    release: {{.Release.Name | quote }}
+    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+    component: "{{.Release.Name}}-broker-resource"
+spec:
+  url: http://{{ .Release.Name }}-minio-broker
+  authSecret:
+     name: "{{ .Release.Name }}-broker-auth"
+     namespace: "{{.Release.Namespace}}"

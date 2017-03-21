@@ -1,0 +1,26 @@
+hash: ca4b7f376b9c2f4d1850f178d1f4a27b9e5e388c0426a86225034757d376bf96
+updated: 2017-03-21T14:17:34.405372869-06:00
+imports:
+- name: code.cloudfoundry.org/lager
+  version: de8e9c6c6e474e5e3668aea1a9817bdb4ceeceb0
+- name: github.com/golang/glog
+  version: 44145f04b68cf362d9c4df2182967c2275eaefed
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: 599cba5e7b6137d46ddf58fb1765f5d928e69604
+- name: github.com/kubernetes-incubator/service-catalog
+  version: 02be9330b8b5b1ace7171a71dcd4b1cb4a440852
+  subpackages:
+  - contrib/pkg/broker/controller
+  - contrib/pkg/broker/server
+  - pkg/brokerapi
+  - pkg/util
+- name: github.com/minio/minio-go
+  version: dcaae9ec4d0b0a81d17f22f6d7a186491f6a55ec
+  subpackages:
+  - pkg/policy
+  - pkg/s3signer
+  - pkg/s3utils
+  - pkg/set
+testImports: []

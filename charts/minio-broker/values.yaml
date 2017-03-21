@@ -1,0 +1,23 @@
+image:
+  registry: quay.io
+  org: deis
+  name: minio-broker
+  tag: canary
+
+  # ImagePullPolicy; valid values are "IfNotPresent" and "Always"
+  pullPolicy: Always
+
+app:
+  name: minio-broker
+  port: 8080
+  broker_name: minio
+
+minio:
+  endpoint: "127.0.0.1:9000"
+  region: "us-east-1"
+  access_key_id: ""
+  secret_access_key: ""
+  bucket_prefix: "cf"
+
+CfBrokerUsername: username
+CfBrokerPassword: password

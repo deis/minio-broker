@@ -1,0 +1,3 @@
+.DS_Store
+vendor/
+rootfs/opt/minio-broker/

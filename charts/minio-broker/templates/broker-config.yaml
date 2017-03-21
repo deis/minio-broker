@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}-broker-config"
+  annotations:
+    "helm.sh/created": {{.Release.Time.Seconds | quote }}
+  labels:
+    heritage: {{.Release.Service | quote }}
+    release: {{.Release.Name | quote }}
+    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+    component: "{{.Release.Name}}-broker"
+data:
+  broker-config.json: >
+    {
+      "log_level": "DEBUG",
+      "username": "{{.Values.CfBrokerUsername}}",
+      "password": "{{.Values.CfBrokerPassword}}",
+      "minio_config": {
+        "region": "{{.Values.minio.region}}",
+        "bucket_prefix": "{{.Values.minio.bucket_prefix}}",
+        "endpoint": "{{.Values.minio.endpoint}}",
+        "access_key_id": "{{.Values.minio.access_key_id}}",
+        "secret_access_key": "{{.Values.minio.secret_access_key}}"
+      }
+    }
